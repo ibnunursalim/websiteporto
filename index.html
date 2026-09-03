@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio | Ibnu Nur Salim</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Manrope,sans-serif;background:#FFEFC7;color:#000053;background-image:radial-gradient(circle at top right,#FFF3D6 0,#FFEFC7 45%,#FFEFC7 100%)}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(255,239,199,.90);backdrop-filter:blur(18px);border-bottom:1px solid #e7e1d8;z-index:10}
+nav a{text-decoration:none;color:#000053;margin-left:22px;font-weight:600;transition:.3s}nav a:hover{color:#000080}.cv{background:#000080;color:#FFFFFF;padding:10px 18px;border-radius:999px}
+.hero{min-height:100vh;padding:120px 7%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px}
+.hero h1{font-size:68px;line-height:1}.hero p{margin:22px 0;line-height:1.8;color:#000053}.hero h1{background:linear-gradient(90deg,#000053,#000080);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btn{display:inline-block;background:#000080;color:#FFFFFF;padding:14px 24px;box-shadow:0 12px 30px rgba(0,0,128,.25);border-radius:999px;text-decoration:none;transition:.3s}.btn:hover{transform:translateY(-3px)}
+.photo{height:520px;border-radius:24px;background:#FFEFC7 url('profilibnu.png') center/cover}
+section{padding:80px 7%}h2{font-size:40px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:32px}
+.card{background:#FFFFFF;border-radius:22px;overflow:hidden;border:1px solid #ece7df;box-shadow:0 18px 40px rgba(0,0,83,.15);cursor:pointer;transition:.35s}
+.card:hover{transform:translateY(-10px);box-shadow:0 25px 55px rgba(0,0,83,.22)}
+.thumb{
+height:320px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#FFD500;
+overflow:hidden;
+}
+.thumb img{
+width:75%;
+height:auto;
+max-height:85%;
+object-fit:contain;
+transition:.3s;
+}
+.card:hover .thumb img{transform:scale(1.05)}
+.info{padding:24px}.info h3{margin-bottom:8px;font-size:22px}.info p{color:#555}
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px}.step{background:#FFF;border-left:5px solid #FDC500;padding:24px;border-radius:16px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:25px;z-index:20}
+.box{background:#FFFFFF;border-radius:20px;max-width:900px;width:100%;max-height:92vh;overflow-y:auto}.viewer{
+position:relative;
+height:420px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f7f7f7;
+}
+.viewer img{
+width:85%;
+height:85%;
+object-fit:contain;
+}
+.arr{position:absolute;top:50%;transform:translateY(-50%);border:none;background:#0007;color:#FFFFFF;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer}
+.prev{left:15px}.next{right:15px}.thumbs{display:flex;gap:8px;padding:12px;overflow:auto}.thumbs img{width:80px;height:60px;object-fit:cover;border-radius:8px;opacity:.6;cursor:pointer}.thumbs .a{opacity:1;outline:2px solid #000080}.content{padding:24px;line-height:1.8}.content p{color:#444;text-align:justify;white-space:normal}.close{float:right;cursor:pointer;font-size:28px}
+footer{text-align:center;padding:40px;color:#000053;background:#000080;margin-top:60px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:46px}.photo{height:360px}}
+</style></head><body>
+<header><b>IBNU.</b><nav><a href="#works">Works</a><a href="#process">Process</a><a href="#contact">Contact</a><a class="cv" href="https://drive.google.com/file/d/1zduraBC0AC0DAiKxjFFbb2dd0z5EIbEX/view?usp=sharing" download>Download CV</a></nav></header>
+<section class="hero"><div><small style="color:#000080;font-weight:700">PRODUCT DESIGN PORTFOLIO</small><h1>Designing Products<br>With Purpose.</h1><p>Fresh Graduate S1 Desain Produk yang berfokus pada Product Design, Furniture, Packaging, dan 3D Visualization.</p><a class="btn" href="#works">View Projects</a></div><div class="photo"></div></section>
+<section id="works" style="background:#FFEFC7"><h2>Selected Works</h2><div class="grid">
+<div class="card" onclick="openP(0)"><div class="thumb"><img src="kemasan.png" alt="Kemasan Tempe Mendoan"></div><div class="info"><h3>Kemasan Tempe Mendoan</h3><p>Packaging Design</p></div></div>
+<div class="card" onclick="openP(1)"><div class="thumb"><img src="komori.png" alt="Komori Roll"></div><div class="info"><h3>Komori Roll</h3><p>Furniture Design</p></div></div>
+
+<div class="card" onclick="openP(2)">
+<div class="thumb"><img src="dingklik1.png" alt="dingklik1"></div>
+<div class="info"><h3>Dingklik Mekanik</h3><p>Furniture Design</p></div>
+</div>
+
+<div class="card" onclick="openP(3)">
+<div class="thumb"><img src="botol1.png" alt="Botol Parfum"></div>
+<div class="info"><h3>Botol Parfum</h3><p>Primary Packaging Design</p></div>
+</div>
+</div></section>
+<section id="process" style="background:#FFD500"><h2>Design Process</h2><div class="process"><div class="step">Research</div><div class="step">Ideate</div><div class="step">Sketch</div><div class="step">CAD</div><div class="step">Prototype</div><div class="step">Testing</div></div></section>
+<section id="contact" style="background:#FFEFC7">
+<h2>Let's Work Together</h2>
+<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:20px">
+<a href="mailto:ibnunursalim12@gmail.com?subject=Halo%20Ibnu&body=Halo%20Ibnu,%20saya%20tertarik%20dengan%20portofolio%20Anda." style="text-decoration:none;color:#000080;background:#FFFFFF;padding:14px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.08)">
+    <i class="fa-solid fa-envelope"></i> Email
+</a>
+<a href="https://www.linkedin.com/in/ibnu-nursalim-842b75423" target="_blank" style="text-decoration:none;color:#000080;background:#FFFFFF;padding:14px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.08)">
+<i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+<a href="https://www.instagram.com/ibnu.ns1?igsh=MTFua215bXpvM2M2eQ==" target="_blank" style="text-decoration:none;color:#000080;background:#FFFFFF;padding:14px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.08)">
+<i class="fa-brands fa-instagram"></i> Instagram
+</a>
+</div>
+</section>
+<footer style='color:#fff'>© 2026 Ibnu Nur Salim • Product Designer</footer>
+<div class="modal" id="m"><div class="box"><div class="viewer"><img id="img"><button class="arr prev" onclick="prev(event)">❮</button><button class="arr next" onclick="next(event)">❯</button></div><div class="thumbs" id="ths"></div><div class="content"><span class="close" onclick="m.style.display='none'">✕</span><h2 id="tt"></h2><p id="dd"></p></div></div></div>
+<script>
+const data=[
+{t:'Kemasan Tempe Mendoan',d:'Proyek Tugas Akhir yang berfokus pada perancangan kemasan semi-disposable berbahan bambu untuk tempe mendoan sebagai oleh-oleh khas Banyumas. Desain ini mengutamakan perlindungan produk selama distribusi, kemudahan penggunaan, serta mengangkat identitas budaya lokal melalui pemilihan material dan bentuk kemasan.',i:['produk2.png','produk3.png']},
+{t:'Komori Roll',d:'Proyek pengembangan produk selama program magang di PT Era Kayu Karya Abadi. Saya terlibat dalam pengembangan desain, visualisasi 3D, hingga proses produksi bersama tim. Produk telah diproduksi, dipasarkan, dan berhasil terjual kepada konsumen.',i:['rak1.jpg','rak2.jpg','rak3.jpg']},
+{t:'Dingklik Mekanik',d:'Proyek tugas perkuliahan yang berfokus pada perancangan dingklik mekanik motor sebagai sarana pendukung aktivitas servis kendaraan. Produk dirancang dengan mengintegrasikan fungsi tempat duduk, laci penyimpanan, rak peralatan, serta roda untuk memudahkan mobilitas selama proses perawatan dan perbaikan sepeda motor. Perancangan dilakukan melalui proses riset kebutuhan pengguna, pengembangan konsep, pemodelan 3D, hingga pembuatan prototipe dengan mempertimbangkan aspek ergonomi, fungsi, kekuatan struktur, dan efisiensi kerja mekanik.',i:['dingklik2.png','dingklik3.png']},
+{t:'Botol Parfum',d:'Proyek tugas perkuliahan yang berfokus pada perancangan botol parfum dengan inspirasi dari karakter desain Stone Island. Desain dikembangkan melalui eksplorasi bentuk, proporsi, dan detail visual untuk menghadirkan produk yang modern, premium, dan ergonomis. Proses perancangan meliputi riset, pengembangan konsep, pemodelan 3D, hingga visualisasi produk dengan mempertimbangkan aspek fungsi, estetika, dan pengalaman pengguna.',i:['botol2.png','botol3.png']}
+];
+let p=0,n=0;
+function draw(){img.src=data[p].i[n];tt.textContent=data[p].t;dd.textContent=data[p].d;ths.innerHTML='';data[p].i.forEach((s,k)=>{let im=document.createElement('img');im.src=s;if(k==n)im.className='a';im.onclick=()=>{n=k;draw()};ths.appendChild(im);});}
+function openP(x){p=x;n=0;draw();m.style.display='flex'}
+function next(e){e.stopPropagation();n=(n+1)%data[p].i.length;draw()}
+function prev(e){e.stopPropagation();n=(n-1+data[p].i.length)%data[p].i.length;draw()}
+let sx=0;img.addEventListener('touchstart',e=>sx=e.touches[0].clientX);img.addEventListener('touchend',e=>{let d=e.changedTouches[0].clientX-sx;if(d>40)prev({stopPropagation(){}});if(d<-40)next({stopPropagation(){}})});m.onclick=e=>{if(e.target===m)m.style.display='none'}
+</script></body></html>
